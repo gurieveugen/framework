@@ -92,4 +92,17 @@ class Loop
 	public static function terms($taxonomy){
 		return get_the_terms(static::id(), $taxonomy);
 	}
+
+	/**
+	 * Display the classes for the post div.
+	 *
+	 * Author: Guriev Eugen
+	 * 
+	 * @param  string|array $class One or more classes to add to the class list.
+	 * @param  int|WP_Post $post_id Optional. Post ID or post object.
+	 * @return string HTML class code
+	 */
+	public static function postClass($class = '', $post_id = null){
+		return 'class="' . join( ' ', get_post_class( $class, $post_id ) ) . '"';
+	}
 }
